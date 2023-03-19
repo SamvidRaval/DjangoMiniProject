@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title> Magrigold Hotel</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static '/js/pickmeup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/handleCounter.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/pickmeup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/handle-counter.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script type="text/javascript" src="{% static '/js/jquery.scrollUp.js' %}"></script>
+     <script type="text/javascript" src="{% static '/js/demo.js' %}"></script>
+    <style>
+        .content-table{
+            border-collapse: collapse;
+            margin: auto;
+            font-size: 0.9em;
+            min-width: 400px;
+            border-radius: 5px 5px0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0.15);
+        }
+        .content-table thead tr{
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+        .content-table th,
+        .content-table td{
+            padding: 12px 15px;
+        }
+        .content-table tbody tr{
+            border-bottom: 1px solid #dddddd;
+        }
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        .content-table tbody tr:last-of-type {
+            border-bottom:2px solid #009879;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="tm-header">
+        <img class="tm-logo" src="{% static '/images/marigold.png' %}" alt="Majestic Hotel">
+        <nav class="tm-nav">
+       <div>
+            <ul>
+                <li class="tm-list"><a href="/index/home/">Home</a></li>
+                <li class="tm-list"><a href="/index/rooms_list/">Rooms List</a></li>
+                <li class="tm-list"><a href="/index/book/">Book Room</a></li>
+                <li><a href="/index/contact/">Contact</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="tm-main">
+           <p>Bookings List</p>
+    </section>
+
+   <div class="col-md-12">
+        <div>
+            <table class="content-table" align="center">
+                <thead class="thead.dark">
+                    <tr>
+                        <th>Guest Name</th>
+                        <th>Suite</th>
+                        <th>Check In Date</th>
+                        <th>Check Out Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for i in messages %}
+                    <tr>
+                        <td>{{i.user}}</td>
+                        <td>{{i.room}}</td>
+                        <td>{{i.Check_in}}</td>
+                        <td>{{i.Check_out}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="tm-footer">
+        <div class="tm-us">
+        <p class="bold">About Us</p>
+        <p>Welcome to Marigold Hotel,here we provide one of country's most luxurious rooms to our guest.</p>
+        </div>
+
+        <div class="tm-address">
+        <p class="bold">Our Address</p>
+        <p> Genting Highlands, Malaysia
+            Phone : (+91) 9930312094
+            Email : marigold@info.com</p>
+        </div>
+        <br/>
+    </footer>
+
+
+
+    </body>
+
+</html>

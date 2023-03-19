@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title> Marigold Hotel</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static '/js/pickmeup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/handleCounter.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/pickmeup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/handle-counter.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script type="text/javascript" src="{% static '/js/jquery.scrollUp.js' %}"></script>
+     <script type="text/javascript" src="{% static '/js/demo.js' %}"></script>
+    <style>
+        .form {
+		    margin: 0 auto;
+		    width: 210px;
+	    }
+        .form input{
+		    display: inline-block;
+		    text-align: left;
+		    float: right;
+	    }
+    </style>
+</head>
+
+<body>
+    <header class="tm-header">
+        <img class="tm-logo" src="{% static '/images/marigold.png' %}" alt="Majestic Hotel">
+        <nav class="tm-nav">
+       <div>
+            <ul>
+                <li class="tm-list"><a href="/index/home/">Home</a></li>
+                <li class="tm-list"><a href="/index/booking_list/">Booking List</a></li>
+                <li class="tm-list"><a href="/index/book/">Book Room</a></li>
+
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="tm-main">
+           <p>Contact Us </p>
+    </section>
+    <form action="/contact/" class="form" method="POST">
+        {% csrf_token %}
+<!--        <input type="text" class="form-control" name="user2" placeholder="Your Name">-->
+<!--        <input type="email" class="form-control" name="email" placeholder="Email Id" align="left">-->
+<!--        <input type="text" class="form-control" name="phone" placeholder="Contact No.">-->
+<!--        <button type="submit">Submit</button>-->
+    </form>
+
+    <footer class="tm-footer">
+        <div class="tm-us">
+        <p class="bold">About Us</p>
+        <p>Welcome to Marigold Hotel,here we provide one of country's most luxurious rooms to our guest.</p>
+        </div>
+
+        <div class="tm-address">
+        <p class="bold">Our Address</p>
+        <p> Genting Highlands, Malaysia
+            Phone : (+91) 9930312094
+            Email : marigold@info.com</p>
+        </div>
+        <br/>
+    </footer>
+
+
+
+    </body>
+
+</html>
